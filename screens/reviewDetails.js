@@ -14,8 +14,4 @@ const About = ({ navigation }) => {
 
 export default About;
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 24
-  }
-});
+
