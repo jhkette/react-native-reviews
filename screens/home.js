@@ -1,6 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-import { StyleSheet, Text, View, FlatList, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity
+} from "react-native";
 import { globalStyles } from "../styles/global";
 
 const Home = ({ navigation }) => {
@@ -27,12 +33,16 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={globalStyles.container}>
-        <FlatList data={reviews} renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate('ReviewDetails', item)}>
-                <Text style={globalStyles.titleText}>{ item.title }</Text>
-            </TouchableOpacity>
-        )}/>
-      
+      <FlatList
+        data={reviews}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ReviewDetails", item)}
+          >
+            <Text style={globalStyles.titleText}>{item.title}</Text>
+          </TouchableOpacity>
+        )}
+      />
     </View>
   );
 };
