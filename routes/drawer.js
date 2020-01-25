@@ -7,6 +7,7 @@ import AboutStack from './aboutStack';
 
 // drawer navigation options
 const RootDrawerNavigator = createDrawerNavigator({
+  
   Home: {
     screen: HomeStack,
   },

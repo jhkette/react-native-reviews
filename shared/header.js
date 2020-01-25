@@ -28,11 +28,11 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontWeight: 'bold',
-    fontSize: 40,
+    fontSize: 25,
     color: '#1a1a1a',
     letterSpacing: 1,
     textAlign: 'center',
-    paddingLeft: 70
+    
   },
   icon: {
     // position: 'absolute',
