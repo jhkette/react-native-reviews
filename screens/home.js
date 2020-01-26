@@ -1,14 +1,18 @@
 import React, { useState } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+
 
 import {
   StyleSheet,
   Text,
   View,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  Modal
 } from "react-native";
 import { globalStyles } from "../styles/global";
-import Card from '../shared/card';
+import Card from "../shared/card";
+import ReviewForm from './reviewForm'
 
 // Home screen
 const Home = ({ navigation }) => {
@@ -32,17 +36,36 @@ const Home = ({ navigation }) => {
       key: "3"
     }
   ]);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <View style={globalStyles.container}>
+      <Modal visible={modalOpen} animationType="slide">
+        <MaterialIcons
+          name="close"
+          size={24}
+          style={{...styles.modalToggle, ...styles.modalClose}}
+          onPress={() => setModalOpen(false)}
+        />
+        <View style={styles.modalContent}>
+          <Text>Hello</Text>
+        </View>
+      </Modal>
+      <MaterialIcons
+        name="add"
+        style={styles.modalToggle}
+        size={24}
+        onPress={() => setModalOpen(true)}
+      />
+      <ReviewForm />
       <FlatList
         data={reviews}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() => navigation.navigate("ReviewDetails", item)}
           >
-          <Card>
-            <Text style={globalStyles.titleText}>{item.title}</Text>
+            <Card>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
             </Card>
           </TouchableOpacity>
         )}
@@ -52,3 +75,23 @@ const Home = ({ navigation }) => {
 };
 
 export default Home;
+
+const styles = StyleSheet.create({
+  modalToggle: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: "#f2f2f2",
+    padding: 10,
+    borderRadius: 10,
+    alignSelf: "center"
+  },
+  modalClose: {
+    marginTop: 20,
+    marginBottom: 0
+  },
+  modalContent: {
+    flex: 1
+  }
+});

@@ -6,7 +6,7 @@ import Navigator from './routes/drawer';
 
 
 
-
+// load fonts using async function
 const getFonts = () => Font.loadAsync({
   'nunito-regular': require('./assets/fonts/Nunito-Regular.ttf'),
   'nunito-bold': require('./assets/fonts/Nunito-Bold.ttf')
@@ -20,10 +20,12 @@ export default function App() {
       <Navigator />
     )
   } else {
+     {/* on finish set font loading to true */}
     return (
       <AppLoading 
         startAsync={getFonts} 
         onFinish={() => setFontsLoaded(true)} 
+       
       />
     )
   }
