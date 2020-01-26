@@ -5,7 +5,9 @@ import { createAppContainer } from 'react-navigation';
 import HomeStack from './homeStack';
 import AboutStack from './aboutStack';
 
-// drawer navigation options
+// drawer navigation options 
+// create drawer navigation
+//  and add two stacks
 const RootDrawerNavigator = createDrawerNavigator({
   
   Home: {

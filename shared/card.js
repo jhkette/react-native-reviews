@@ -5,6 +5,8 @@ export default function Card(props) {
   return (
     <View style={styles.card}>
         <View style={styles.cardContent}>
+            {/* Props.children - This allows the card to be used as a template for multiple 
+            features. Ie the home screen and the review details screen */}
             { props.children }
         </View>
     </View>

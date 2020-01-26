@@ -3,6 +3,10 @@ import React from 'react';
 import Header from '../shared/header';
 import About from '../screens/about';
 
+// This is the 'about stack' navigation. 
+// We create cont screens then add it as a parameter to createStackNavigation
+// With options. 
+
 const screens = {
   About: {
     screen: About,
@@ -17,7 +21,7 @@ const screens = {
 const AboutStack = createStackNavigator(screens, {
   defaultNavigationOptions: {
     headerTintColor: '#444',
-    headerStyle: { backgroundColor: '#eee', height: 90 },
+    headerStyle: { backgroundColor: '#eee', height: 90, width: '100%' }
   }
 });
 

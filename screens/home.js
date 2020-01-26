@@ -10,6 +10,7 @@ import {
 import { globalStyles } from "../styles/global";
 import Card from '../shared/card';
 
+// Home screen
 const Home = ({ navigation }) => {
   const [reviews, setReviews] = useState([
     {
